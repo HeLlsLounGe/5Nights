@@ -52,9 +52,9 @@ public class CameraScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && active)
         {
             currentCam--;
-            if (currentCam <= 0)
+            if (currentCam < 0)
             {
-                currentCam = camPoint.Length;
+                currentCam = camPoint.Length - 1;
             }
             transform.position = camPoint[currentCam].transform.position;
             transform.rotation = camPoint[currentCam].transform.rotation;

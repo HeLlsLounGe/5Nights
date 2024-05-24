@@ -9,9 +9,14 @@ public class AnimatronicMovement : MonoBehaviour
     [SerializeField] int Aggression;
     int currentPoint = 0;
     [SerializeField] GameObject[] movePoint;
+    AnimatronicDoor animDoor;
+    AnimatronicMovement animMove;
     void Awake()
     {
         moveTimer = moveRate;
+        animDoor = GetComponent<AnimatronicDoor>();
+        animMove= GetComponent<AnimatronicMovement>();
+        
     }
 
     void Update()
@@ -33,7 +38,7 @@ public class AnimatronicMovement : MonoBehaviour
 
     void Move()
     {
-        int wander = Random.Range(0, 10);
+        int wander = Random.Range(1, 10);
         moveTimer = moveRate;
         if (Aggression > Random.Range(0, 20))
         {
@@ -49,12 +54,27 @@ public class AnimatronicMovement : MonoBehaviour
             }
         }
     }
+    public void Relocate()
+    {
+        currentPoint = Random.Range(0, movePoint.Length - 2);
+        transform.position = movePoint[currentPoint].transform.position;
+    }
     void Position()
     {
-        if (currentPoint > movePoint.Length)
+        if (currentPoint >= movePoint.Length - 1)
         {
-            currentPoint = Random.Range(0, movePoint.Length - 1);
+           animDoor.enabled= true;
+           animMove.enabled = false;
+                
         }
-        transform.position = movePoint[currentPoint].transform.position;
+        if (currentPoint < 0)
+        {
+            currentPoint = 0;
+            transform.position = movePoint[currentPoint].transform.position;
+        }
+        else
+        {
+            transform.position = movePoint[currentPoint].transform.position;
+        }
     }
 }
