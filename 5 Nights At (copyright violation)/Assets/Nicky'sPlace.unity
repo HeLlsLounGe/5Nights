@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344.76202, y: 194.6}
+  m_AnchoredPosition: {x: -294.5, y: 167.4}
   m_SizeDelta: {x: 180.476, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &228379889
@@ -352,7 +352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344.76202, y: 194.6}
+  m_AnchoredPosition: {x: -294.5, y: 167.4}
   m_SizeDelta: {x: 180.476, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605186183
@@ -772,10 +772,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &1273691586 stripped
 GameObject:
@@ -803,6 +803,33 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1273691592
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273691586}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1297942958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1483,7 +1510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344.76202, y: 194.6}
+  m_AnchoredPosition: {x: -294.5, y: 167.4}
   m_SizeDelta: {x: 180.476, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1983068915
@@ -1946,6 +1973,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3455105852965486861, guid: 1c583521422ec37428a2bd13817664f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1273691589}
+    - targetCorrespondingSourceObject: {fileID: 3455105852965486861, guid: 1c583521422ec37428a2bd13817664f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1273691592}
   m_SourcePrefab: {fileID: 100100000, guid: 1c583521422ec37428a2bd13817664f0, type: 3}
 --- !u!1001 &7044956314248338207
 PrefabInstance:
