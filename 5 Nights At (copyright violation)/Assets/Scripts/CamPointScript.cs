@@ -34,7 +34,7 @@ public class CamPointScript : MonoBehaviour
             }
             else if (volumeLevel < 20)
             { 
-            midVol.enabled = true;
+            minVol.enabled = true;
             }
         }
     }

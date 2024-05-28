@@ -27,12 +27,12 @@ public class MovePointScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Animatronic") 
         { 
-            closetCamPoint.volumeLevel = 100;
+            closetCamPoint.volumeLevel = closetCamPoint.volumeLevel + 100;
 
 
             for (int i = 0; i < closeCameras.Length; i++)
             {
-                closeCamPoints[i].volumeLevel = 20;
+                closeCamPoints[i].volumeLevel = closeCamPoints[i].volumeLevel + 20;
             }
         }
     }
@@ -40,11 +40,11 @@ public class MovePointScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Animatronic")
         {
-            closetCamPoint.volumeLevel = 100;
+            closetCamPoint.volumeLevel = closetCamPoint.volumeLevel - 100;
 
             for (int i = 0; i < closeCameras.Length; i++)
             {
-                closeCamPoints[i].volumeLevel = 20;
+                closeCamPoints[i].volumeLevel = closeCamPoints[i].volumeLevel - 20;
             }
         }
     }

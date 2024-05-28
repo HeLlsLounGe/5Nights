@@ -121,9 +121,10 @@ GameObject:
   - component: {fileID: 7626779231602716474}
   - component: {fileID: 4311290377465289182}
   - component: {fileID: 5150619566099899038}
+  - component: {fileID: 6205367563076688734}
   m_Layer: 0
   m_Name: Animatronic
-  m_TagString: Untagged
+  m_TagString: Animatronic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1c85f5488ad9944acb64c3498b72c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRate: 1
+  moveRate: 7
   Aggression: 20
   movePoint:
   - {fileID: 0}
@@ -257,6 +258,33 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!54 &6205367563076688734
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970963121931343055}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &5862120156997255672
 GameObject:
   m_ObjectHideFlags: 0
