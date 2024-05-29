@@ -86,4 +86,11 @@ public class AnimatronicMovement : MonoBehaviour
             transform.rotation = movePoint[currentPoint].transform.rotation;
         }
     }
+    public void RageAttack()
+    {
+        currentPoint = movePoint.Length - 1;
+        transform.position = movePoint[currentPoint].transform.position;
+        transform.rotation = movePoint[currentPoint].transform.rotation;
+        Position();
+    }
 }
