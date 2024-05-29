@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 4311290377465289182}
   - component: {fileID: 5150619566099899038}
   - component: {fileID: 6205367563076688734}
+  - component: {fileID: 3668201922957799884}
   m_Layer: 0
   m_Name: Animatronic
   m_TagString: Animatronic
@@ -285,6 +286,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &3668201922957799884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970963121931343055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9947e809a6e784296583769999d5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAggro: 10
 --- !u!1 &5862120156997255672
 GameObject:
   m_ObjectHideFlags: 0

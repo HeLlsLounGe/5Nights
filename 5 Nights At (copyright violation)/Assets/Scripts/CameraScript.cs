@@ -7,6 +7,7 @@ public class CameraScript : MonoBehaviour
     Camera cam;
     bool active = false;
    [SerializeField] GameObject[] camPoint;
+    [SerializeField] GameObject glitchPoint;
     int currentCam = 0;
     void Awake()
     {
@@ -63,6 +64,20 @@ public class CameraScript : MonoBehaviour
     public void UseCameraButton (int camNumber)
     {
         currentCam = camNumber;
+        transform.position = camPoint[currentCam].transform.position;
+        transform.rotation = camPoint[currentCam].transform.rotation;
+    }
+
+    public void MoveToGlitchPoint()
+    {
+
+        transform.position = glitchPoint.transform.position;
+        transform.rotation = glitchPoint.transform.rotation;
+        Invoke("MoveBack", 0.3f);
+    }
+
+    void MoveBack()
+    {
         transform.position = camPoint[currentCam].transform.position;
         transform.rotation = camPoint[currentCam].transform.rotation;
     }
