@@ -11,12 +11,17 @@ public class AnimatronicMovement : MonoBehaviour
     [SerializeField] GameObject[] movePoint;
     AnimatronicDoor animDoor;
     AnimatronicMovement animMove;
+    GameObject sCam;
     void Awake()
     {
         moveTimer = moveRate;
         animDoor = GetComponent<AnimatronicDoor>();
         animMove= GetComponent<AnimatronicMovement>();
-        
+        sCam = GameObject.FindWithTag("SecurityCam");
+
+
+        transform.position = movePoint[0].transform.position;
+        transform.rotation = movePoint[0].transform.rotation;
     }
 
     void Update()
@@ -38,7 +43,7 @@ public class AnimatronicMovement : MonoBehaviour
 
     void Move()
     {
-        int wander = Random.Range(1, 10);
+        int wander = Random.Range(1, 12);
         moveTimer = moveRate;
         if (Aggression > Random.Range(0, 20))
         {
@@ -52,12 +57,14 @@ public class AnimatronicMovement : MonoBehaviour
                 currentPoint--;
                 Position();
             }
+            sCam.GetComponent<CameraScript>().MoveToGlitchPoint();
         }
     }
     public void Relocate()
     {
         currentPoint = Random.Range(0, movePoint.Length - 2);
         transform.position = movePoint[currentPoint].transform.position;
+        sCam.GetComponent<CameraScript>().MoveToGlitchPoint();
     }
     void Position()
     {
@@ -71,10 +78,12 @@ public class AnimatronicMovement : MonoBehaviour
         {
             currentPoint = 0;
             transform.position = movePoint[currentPoint].transform.position;
+            transform.rotation = movePoint[currentPoint].transform.rotation;
         }
         else
         {
             transform.position = movePoint[currentPoint].transform.position;
+            transform.rotation = movePoint[currentPoint].transform.rotation;
         }
     }
 }
