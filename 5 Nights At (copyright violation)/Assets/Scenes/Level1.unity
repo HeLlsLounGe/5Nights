@@ -1775,6 +1775,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1450340641}
     - target: {fileID: 913163499094245878, guid: 1c583521422ec37428a2bd13817664f0, type: 3}
+      propertyPath: fInput.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 913163499094245878, guid: 1c583521422ec37428a2bd13817664f0, type: 3}
       propertyPath: camPoint.Array.size
       value: 14
       objectReference: {fileID: 0}
