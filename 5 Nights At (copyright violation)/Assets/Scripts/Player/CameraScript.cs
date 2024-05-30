@@ -81,6 +81,13 @@ public class CameraScript : MonoBehaviour
         transform.rotation = camPoint[currentCam].transform.rotation;
     }
 
+    public void UseFlashButton()
+    {
+        for (int i = 0; i < fInput.Length; i++)
+        {
+            fInput[i].MyInput();
+        }
+    }
     public void MoveToGlitchPoint()
     {
 
