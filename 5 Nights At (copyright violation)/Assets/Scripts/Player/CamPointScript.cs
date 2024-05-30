@@ -9,6 +9,7 @@ public class CamPointScript : MonoBehaviour
     public Image minVol;
     public Image midVol;
     public Image maxVol;
+    DelayCanvas delayCanvas;
     void Awake ()
     {
         volumeLevel = 0;
@@ -18,6 +19,7 @@ public class CamPointScript : MonoBehaviour
         minVol.enabled = false;
         midVol.enabled = false;
         maxVol.enabled = false;
+        delayCanvas = GameObject.FindWithTag("MainCamera").GetComponent<DelayCanvas>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +39,7 @@ public class CamPointScript : MonoBehaviour
             minVol.enabled = true;
             }
         }
+        delayCanvas.CanvasActivated();
     }
     private void OnTriggerExit(Collider other)
     {
