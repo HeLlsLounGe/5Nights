@@ -6,7 +6,9 @@ public class CameraScript : MonoBehaviour
 {
     Camera cam;
     bool active = false;
-   [SerializeField] GameObject[] camPoint;
+    [SerializeField] GameObject[] camPoint;
+    [SerializeField] GameObject glitchPoint;
+    [SerializeField] FlashInput[] fInput;
     int currentCam = 0;
     void Awake()
     {
@@ -14,6 +16,11 @@ public class CameraScript : MonoBehaviour
         cam.enabled = false;
         transform.position = camPoint[0].transform.position;
         transform.rotation = camPoint[0].transform.rotation;
+
+        for (int i = 0; i < camPoint.Length; i++)
+        {
+            fInput[i] = camPoint[i].GetComponent<FlashInput>();
+        }
     }
 
     // Update is called once per frame
@@ -59,10 +66,31 @@ public class CameraScript : MonoBehaviour
             transform.position = camPoint[currentCam].transform.position;
             transform.rotation = camPoint[currentCam].transform.rotation;
         }
+        if (Input.GetKeyDown(KeyCode.K) && active)
+        {
+            for (int i = 0; i < fInput.Length; i++)
+            {
+                fInput[i].MyInput();
+            }
+        }
     }
     public void UseCameraButton (int camNumber)
     {
         currentCam = camNumber;
+        transform.position = camPoint[currentCam].transform.position;
+        transform.rotation = camPoint[currentCam].transform.rotation;
+    }
+
+    public void MoveToGlitchPoint()
+    {
+
+        transform.position = glitchPoint.transform.position;
+        transform.rotation = glitchPoint.transform.rotation;
+        Invoke("MoveBack", 0.3f);
+    }
+
+    void MoveBack()
+    {
         transform.position = camPoint[currentCam].transform.position;
         transform.rotation = camPoint[currentCam].transform.rotation;
     }
