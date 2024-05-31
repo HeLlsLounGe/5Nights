@@ -3173,7 +3173,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1314709892
 MeshRenderer:
@@ -5166,7 +5166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 319624437840630248, guid: 6b2f206fe1aaf7740848f24386ea9ef3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.122341
+      value: -9.9
       objectReference: {fileID: 0}
     - target: {fileID: 319624437840630248, guid: 6b2f206fe1aaf7740848f24386ea9ef3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5174,7 +5174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 319624437840630248, guid: 6b2f206fe1aaf7740848f24386ea9ef3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -576.7961
+      value: -594.2
       objectReference: {fileID: 0}
     - target: {fileID: 319624437840630248, guid: 6b2f206fe1aaf7740848f24386ea9ef3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5314,7 +5314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3668201922957799884, guid: 59d5327da7398694883c99c4e578eeb3, type: 3}
       propertyPath: maxAggro
-      value: 60
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3970963121931343055, guid: 59d5327da7398694883c99c4e578eeb3, type: 3}
       propertyPath: m_Name
