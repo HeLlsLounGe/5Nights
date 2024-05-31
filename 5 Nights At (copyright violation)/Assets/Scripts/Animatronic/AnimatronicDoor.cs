@@ -58,6 +58,17 @@ public class AnimatronicDoor : MonoBehaviour
             MoveFromDoor();
         }
     }
+    public void DoorInput()
+    {
+        if (!doorclosed)
+        {
+            doorclosed = true;
+        }
+        else if (doorclosed)
+        {
+            doorclosed = false;
+        }
+    }
 
     private void MoveFromDoor()
     {

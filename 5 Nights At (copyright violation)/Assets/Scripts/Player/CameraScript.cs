@@ -37,7 +37,7 @@ public class CameraScript : MonoBehaviour
             cam.enabled = true;
             active = true;
         }
-        else if (Input.GetButtonDown("Jump") && active)
+        else if (Input.GetButtonDown("Jump") && active || Input.GetKeyDown(KeyCode.Escape) && active)
         {
             cam.enabled = false;
             active = false;
@@ -100,5 +100,10 @@ public class CameraScript : MonoBehaviour
     {
         transform.position = camPoint[currentCam].transform.position;
         transform.rotation = camPoint[currentCam].transform.rotation;
+    }
+    public void CameraActivate()
+    {
+        cam.enabled = true;
+        active = true;
     }
 }

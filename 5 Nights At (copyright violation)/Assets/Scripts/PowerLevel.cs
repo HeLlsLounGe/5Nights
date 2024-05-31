@@ -9,6 +9,7 @@ public class PowerLevel : MonoBehaviour
     public float powerLevel = 100;
     public int levelDisplay;
     public float drainMultiplier = 0.05f;
+    public float usageMultiplier = 1;
     public TextMeshProUGUI display;
     Camera securityCamera;
     void Awake()
@@ -22,10 +23,15 @@ public class PowerLevel : MonoBehaviour
     {
         if (powerLevel > 0)
         {
-            powerLevel = powerLevel - (Time.deltaTime * drainMultiplier);
+            powerLevel = powerLevel - (Time.deltaTime * drainMultiplier * usageMultiplier);
         }
         levelDisplay = Mathf.RoundToInt(powerLevel);
         display.SetText(levelDisplay + "%");
+    }
+
+    void UpdateUseRate(float usage)
+    {
+        usageMultiplier = usageMultiplier + usage;
     }
 }
 
