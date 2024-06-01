@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DoorButton : Interactable
 {
+    //[SerializeField] float doorDrain;
     [SerializeField] GameObject currentAnimatronic;
     [SerializeField] GameObject door;
     AnimatronicDoor animDoor;
+    PowerLevel powerLevel;
     // Start is called before the first frame update
     void Start()
     {
         animDoor = currentAnimatronic.GetComponent<AnimatronicDoor>();
+        powerLevel = GameObject.FindWithTag("MainCamera").GetComponent<PowerLevel>();
         door.GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -25,8 +28,22 @@ public class DoorButton : Interactable
 
 
         if (animDoor.doorclosed == true)
-        { door.GetComponent<MeshRenderer>().enabled = true; }
+        { 
+            door.GetComponent<MeshRenderer>().enabled = true;
+            //AddToUseRate();
+        }
         else if (animDoor.doorclosed == false)
-        { door.GetComponent<MeshRenderer>().enabled = false; }
+        { 
+            door.GetComponent<MeshRenderer>().enabled = false;
+            //LowerUseRate();
+        }
+    }
+    void AddToUseRate()
+    {
+     //   powerLevel.UpdateUseRate(doorDrain);
+    }
+    void LowerUseRate()
+    {
+     //   powerLevel.UpdateUseRate(-doorDrain);
     }
 }

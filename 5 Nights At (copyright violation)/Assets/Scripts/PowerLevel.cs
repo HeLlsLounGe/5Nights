@@ -29,7 +29,7 @@ public class PowerLevel : MonoBehaviour
         display.SetText(levelDisplay + "%");
     }
 
-    void UpdateUseRate(float usage)
+    public void UpdateUseRate(float usage)
     {
         usageMultiplier = usageMultiplier + usage;
     }
