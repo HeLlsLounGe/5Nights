@@ -2732,6 +2732,7 @@ GameObject:
   - component: {fileID: 1274305476}
   - component: {fileID: 1274305475}
   - component: {fileID: 1274305474}
+  - component: {fileID: 1274305478}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -2825,6 +2826,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1314709894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274305478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274305473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac96da189e547f4bb73f3b6e611b682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorDrain: 2
 --- !u!1 &1281553934
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,7 +4339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4083501151425157549, guid: a392778244c1e2f4cb13bdec8d5dad9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 764
+      value: 466
       objectReference: {fileID: 0}
     - target: {fileID: 4083501151425157549, guid: a392778244c1e2f4cb13bdec8d5dad9a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5125,11 +5139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3756f52ad64239d429064f9e769dd736, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.55
+      value: 10.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3756f52ad64239d429064f9e769dd736, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -269.02
+      value: -269.42
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3756f52ad64239d429064f9e769dd736, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5773,6 +5787,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 181102493658466598, guid: 6a211265c58b187499449822e8626d65, type: 3}
+      propertyPath: timerMult
+      value: 1.05
+      objectReference: {fileID: 0}
     - target: {fileID: 181102493658466598, guid: 6a211265c58b187499449822e8626d65, type: 3}
       propertyPath: delayCanvas
       value: 

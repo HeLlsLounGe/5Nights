@@ -8,15 +8,18 @@ public class AnimatronicMovement : MonoBehaviour
     float moveTimer;
     [SerializeField] int Aggression;
     int currentPoint = 0;
+    public bool angry;
     [SerializeField] GameObject[] movePoint;
     AnimatronicDoor animDoor;
     AnimatronicMovement animMove;
     GameObject sCam;
+    PowerLevel powerLevel;
     void Awake()
     {
         moveTimer = moveRate;
         animDoor = GetComponent<AnimatronicDoor>();
         animMove= GetComponent<AnimatronicMovement>();
+        powerLevel = GameObject.FindWithTag("MainCamera").GetComponent<PowerLevel>();
         sCam = GameObject.FindWithTag("SecurityCam");
 
 
@@ -62,6 +65,12 @@ public class AnimatronicMovement : MonoBehaviour
     }
     public void Relocate()
     {
+        if (angry == true)
+        {
+            powerLevel.powerLevel = powerLevel.powerLevel - 10;
+            GetComponent<Aggression>().AggroReset();
+            angry = false;
+        }
         currentPoint = Random.Range(0, movePoint.Length - 2);
         transform.position = movePoint[currentPoint].transform.position;
         sCam.GetComponent<CameraScript>().MoveToGlitchPoint();
@@ -92,5 +101,6 @@ public class AnimatronicMovement : MonoBehaviour
         transform.position = movePoint[currentPoint].transform.position;
         transform.rotation = movePoint[currentPoint].transform.rotation;
         Position();
+        sCam.GetComponent<CameraScript>().MoveToGlitchPoint();
     }
 }

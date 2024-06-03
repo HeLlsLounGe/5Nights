@@ -6,6 +6,7 @@ public class Aggression : MonoBehaviour
 {
     float aggroTimer;
     public float maxAggro;
+    bool hasAttacked = false;
     void Start()
     {
         
@@ -31,11 +32,17 @@ public class Aggression : MonoBehaviour
 
    void  RageAttack()
     {
-        GetComponent<AnimatronicMovement>().RageAttack();
+        if (hasAttacked == false)
+        {
+            GetComponent<AnimatronicMovement>().angry = true;
+            GetComponent<AnimatronicMovement>().RageAttack();
+            hasAttacked = true;
+        }
     }
 
     public void AggroReset()
     {
         aggroTimer = 0;
+        hasAttacked = false;
     }
 }

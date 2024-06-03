@@ -9,9 +9,11 @@ public class DoorButton : Interactable
     [SerializeField] GameObject door;
     AnimatronicDoor animDoor;
     PowerLevel powerLevel;
+    OtherDoor otherDoor;
     // Start is called before the first frame update
     void Start()
     {
+        otherDoor = GetComponentInChildren<OtherDoor>();
         animDoor = currentAnimatronic.GetComponent<AnimatronicDoor>();
         powerLevel = GameObject.FindWithTag("MainCamera").GetComponent<PowerLevel>();
         door.GetComponent<MeshRenderer>().enabled = false;
@@ -30,20 +32,12 @@ public class DoorButton : Interactable
         if (animDoor.doorclosed == true)
         { 
             door.GetComponent<MeshRenderer>().enabled = true;
-            //AddToUseRate();
+            door.GetComponent<OtherDoor>().ChangePowerUsage();
         }
         else if (animDoor.doorclosed == false)
         { 
             door.GetComponent<MeshRenderer>().enabled = false;
-            //LowerUseRate();
+            door.GetComponent<OtherDoor>().ChangePowerUsage();
         }
-    }
-    void AddToUseRate()
-    {
-     //   powerLevel.UpdateUseRate(doorDrain);
-    }
-    void LowerUseRate()
-    {
-     //   powerLevel.UpdateUseRate(-doorDrain);
     }
 }
