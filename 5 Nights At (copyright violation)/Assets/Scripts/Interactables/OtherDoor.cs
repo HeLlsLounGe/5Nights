@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OtherDoor : MonoBehaviour
 {
-    [SerializeField] float usageMult;
+    [SerializeField] float doorDrain;
     MeshRenderer meshRenderer;
     PowerLevel powerLevel;
     // Start is called before the first frame update
@@ -18,5 +18,17 @@ public class OtherDoor : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ChangePowerUsage()
+    {
+        if (meshRenderer.enabled == true)
+        {
+            powerLevel.UpdateUseRate(doorDrain);
+        }
+        else if (meshRenderer.enabled == false)
+        {
+            powerLevel.UpdateUseRate(-doorDrain);
+        }
     }
 }
