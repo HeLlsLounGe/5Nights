@@ -6,7 +6,7 @@ public class DelayCanvas : MonoBehaviour
 {
     [SerializeField] Canvas delayCanvas;
     bool isActive = false;
-    float delay = 0.05f;
+    public float delay = 0.05f;
     float delayTimer;
     [SerializeField] float timerMult = 1.05f;
     void Start()
