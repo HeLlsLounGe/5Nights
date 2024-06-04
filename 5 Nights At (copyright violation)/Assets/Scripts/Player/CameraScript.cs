@@ -6,6 +6,7 @@ public class CameraScript : MonoBehaviour
 {
     Camera cam;
     bool active = false;
+    public bool poweredOff;
     [SerializeField] GameObject[] camPoint;
     [SerializeField] GameObject glitchPoint;
     [SerializeField] FlashInput[] fInput;
@@ -32,12 +33,12 @@ public class CameraScript : MonoBehaviour
 
     void CameraOn()
     {
-        if (Input.GetButtonDown("Jump") && !active)
+        /*if (Input.GetButtonDown("Jump") && !active)
         {
             cam.enabled = true;
             active = true;
-        }
-        else if (Input.GetButtonDown("Jump") && active || Input.GetKeyDown(KeyCode.Escape) && active)
+        } */
+         if (Input.GetButtonDown("Jump") && active || Input.GetKeyDown(KeyCode.Escape) && active)
         {
             cam.enabled = false;
             active = false;
@@ -66,13 +67,13 @@ public class CameraScript : MonoBehaviour
             transform.position = camPoint[currentCam].transform.position;
             transform.rotation = camPoint[currentCam].transform.rotation;
         }
-        if (Input.GetKeyDown(KeyCode.K) && active)
+       /* if (Input.GetKeyDown(KeyCode.K) && active)
         {
             for (int i = 0; i < fInput.Length; i++)
             {
                 fInput[i].MyInput();
             }
-        }
+        } */
     }
     public void UseCameraButton (int camNumber)
     {
@@ -103,7 +104,10 @@ public class CameraScript : MonoBehaviour
     }
     public void CameraActivate()
     {
-        cam.enabled = true;
-        active = true;
+        if (poweredOff == false)
+        {
+            cam.enabled = true;
+            active = true;
+        }
     }
 }
