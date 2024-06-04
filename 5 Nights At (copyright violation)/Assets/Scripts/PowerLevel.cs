@@ -72,7 +72,7 @@ public class PowerLevel : MonoBehaviour
         cameraScript.poweredOff =  false;
         for (int i = 0; i < doorButtons.Length; i++)
         {
-            doorButtons[i].poweredDown = true;
+            doorButtons[i].poweredDown = false;
 
         }
     }

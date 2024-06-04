@@ -31,14 +31,20 @@ public class DoorButton : Interactable
 
 
         if (animDoor.doorclosed == true && !poweredDown)
-        { 
+        {
             door.GetComponent<MeshRenderer>().enabled = true;
             door.GetComponent<OtherDoor>().ChangePowerUsage();
         }
-        else if (animDoor.doorclosed == false || poweredDown)
-        { 
+        else if (animDoor.doorclosed == false && !poweredDown)
+        {
             door.GetComponent<MeshRenderer>().enabled = false;
             door.GetComponent<OtherDoor>().ChangePowerUsage();
         }
+        else if (animDoor.doorclosed == true && poweredDown && door.GetComponent<MeshRenderer>().enabled == true)
+        {
+            door.GetComponent<MeshRenderer>().enabled = false;
+            door.GetComponent<OtherDoor>().ChangePowerUsage();
+        }
+
     }
 }
