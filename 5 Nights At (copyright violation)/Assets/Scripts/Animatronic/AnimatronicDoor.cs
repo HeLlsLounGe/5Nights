@@ -43,11 +43,11 @@ public class AnimatronicDoor : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.M) && !doorclosed)
         {
-            doorclosed = true;
+           // doorclosed = true;
         }
         else if (Input.GetKeyDown(KeyCode.M) && doorclosed)
         {
-            doorclosed = false;
+           // doorclosed = false;
         }
         if (doorclosed && awayTimer > 0)
         {

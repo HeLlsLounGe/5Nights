@@ -68,7 +68,7 @@ public class PowerLevel : MonoBehaviour
     }
     public void Reboot()
     {
-        delayCanvas.delay = 0.01f;
+        delayCanvas.Rebootsystem();
         cameraScript.poweredOff =  false;
         for (int i = 0; i < doorButtons.Length; i++)
         {

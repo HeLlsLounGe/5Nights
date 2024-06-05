@@ -40,7 +40,7 @@ public class DoorButton : Interactable
             door.GetComponent<MeshRenderer>().enabled = false;
             door.GetComponent<OtherDoor>().ChangePowerUsage();
         }
-        else if (animDoor.doorclosed == true && poweredDown && door.GetComponent<MeshRenderer>().enabled == true)
+        else if (poweredDown && door.GetComponent<MeshRenderer>().enabled == true)
         {
             door.GetComponent<MeshRenderer>().enabled = false;
             door.GetComponent<OtherDoor>().ChangePowerUsage();
