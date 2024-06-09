@@ -19,10 +19,8 @@ public class AnimatronicDoor : MonoBehaviour
         awayTimer = awayRate;
     }
 
-    // Update is called once per frame
     void Update()
     {
-      EnterCheck();
       DoorClose();
     }
 
@@ -41,13 +39,13 @@ public class AnimatronicDoor : MonoBehaviour
 
     void DoorClose()
     {
-        if(Input.GetKeyDown(KeyCode.M) && !doorclosed)
+        //if(Input.GetKeyDown(KeyCode.M) && !doorclosed)
         {
-           // doorclosed = true;
+           //doorclosed = true;
         }
-        else if (Input.GetKeyDown(KeyCode.M) && doorclosed)
+        //else if (Input.GetKeyDown(KeyCode.M) && doorclosed)
         {
-           // doorclosed = false;
+           //doorclosed = false;
         }
         if (doorclosed && awayTimer > 0)
         {

@@ -7,12 +7,7 @@ public class Aggression : MonoBehaviour
     float aggroTimer;
     public float maxAggro;
     bool hasAttacked = false;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         CountDown();

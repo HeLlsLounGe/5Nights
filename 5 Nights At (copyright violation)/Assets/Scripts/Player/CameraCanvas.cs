@@ -19,7 +19,7 @@ public class CameraCanvas : MonoBehaviour
         {
             canvas.enabled = true;
         }
-        else if (securityCamera.enabled == false)
+        else
         {
             canvas.enabled = false;
         }

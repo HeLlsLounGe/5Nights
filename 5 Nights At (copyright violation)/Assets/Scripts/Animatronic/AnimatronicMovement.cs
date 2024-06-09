@@ -35,9 +35,10 @@ public class AnimatronicMovement : MonoBehaviour
     void CountDown()
     {
         if (moveTimer > 0)
+        {
             moveTimer = moveTimer - Time.deltaTime;
-
-        else if (moveTimer <= 0)
+        }
+        else
         {
             Move();
         }
